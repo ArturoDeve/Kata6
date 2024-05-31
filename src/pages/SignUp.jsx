@@ -1,18 +1,20 @@
-import {useForm} from 'react-hook-form'
-import {registerUserService} from '@services/userServices'
+import { useForm } from 'react-hook-form'
+import { registerUserService } from '@/Services/userServices'
 import { useNavigate } from 'react-router-dom'
-import '@styles/form.css'
-import logo from '@/assets/react.svg'
+import '@/styles/styles.css'
+import { logo } from '@/assets/react.svg'
 
 
- const SignUp = () => {
-
+const Signup = () => {
 
   const { register, handleSubmit, formState:{ errors } } = useForm();
   const navigate = useNavigate()
 
   const onSubmit = async (data) =>  {
-    //enviar mi formulario de signup
+
+
+    //enviar  formulario de signup   ---------
+    
     try {
       const response = await registerUserService(data)
       if (response.status === 201){
@@ -24,11 +26,11 @@ import logo from '@/assets/react.svg'
     }
   }
 
-  return (
 
-<main className='form-signin w-100 m-auto'>
+  return (
+    <main className='form-signin w-100'>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <img className='mb-4' src={logo} alt='' width='72' height='57' />
+        <img className='mb-4 logo-react' src={logo} alt='' width='72' height='57' />
         <h1 className='h3 mb-3 fw-normal'>Please sign up</h1>
 
         <div className='form-floating'>
@@ -37,13 +39,10 @@ import logo from '@/assets/react.svg'
             className='form-control'
             id='first_name'
             name='first_name'
-            value=''
-            onChange={() => {}}
             placeholder='John'
             {...register('first_name')}
-
           />
-          <p> {errors.first_name?.message}</p>
+          <p>{errors.first_name?.message}</p>
           <label htmlFor='first_name'>First Name</label>
         </div>
 
@@ -53,12 +52,8 @@ import logo from '@/assets/react.svg'
             className='form-control'
             id='last_name'
             name='last_name'
-            value=''
-            onChange={() => {}}
             placeholder='Doe'
             {...register('last_name')}
-
-
           />
           <p>{errors.last_name?.message}</p>
           <label htmlFor='last_name'>Last Name</label>
@@ -71,6 +66,7 @@ import logo from '@/assets/react.svg'
             name='gender'
             {...register('gender')}
           >
+            <p>{errors.gender?.message}</p>
             <option value=''>Choose...</option>
             <option value='M'>Male</option>
             <option value='F'>Female</option>
@@ -84,11 +80,8 @@ import logo from '@/assets/react.svg'
             className='form-control'
             id='email'
             name='email'
-            value=''
-            onChange={() => {}}
             placeholder='name@example.com'
             {...register('email')}
-
           />
           <p>{errors.email?.message}</p>
           <label htmlFor='email'>Email address</label>
@@ -100,23 +93,18 @@ import logo from '@/assets/react.svg'
             className='form-control'
             id='password'
             name='password'
-            value=''
-            onChange={() => {}}
             placeholder='Password'
             {...register('password')}
-
           />
-          
           <p>{errors.password?.message}</p>
           <label htmlFor='password'>Password</label>
         </div>
 
         <button className='w-100 btn btn-lg btn-primary' type='submit'>Sign up</button>
-        <p className='mt-5 mb-3 text-muted'>© 2017–2022</p>
-      </form>
+        <p className='mt-5 mb-3 text-body-secondary'>© 2017–2024</p>
+        </form>
     </main>
-
   )
 }
 
-export default SignUp
+export default Signup

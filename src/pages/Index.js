@@ -2,10 +2,12 @@ import Dashboard from "./Dashboard";
 import Home from "./Home";
 import Login from "./Login";
 import Secret from "./Secret";
-import SignUp from "./SignUp";
+import Signup from "./Signup";
 
 
-// exporta como objetoo
+
+// EXPORTAR COMO UN OBJETO
+
 
 export {
 
@@ -13,5 +15,6 @@ export {
     Home,
     Login,
     Secret,
-    SignUp
+    Signup
+    
 }

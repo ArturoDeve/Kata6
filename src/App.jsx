@@ -1,19 +1,20 @@
-
-
 import { BrowserRouter } from "react-router-dom";
-import { Alan } from "@ejemplo/Alan";
+import RoutesIndex from "@/Routes/RoutesIndex";
+import Header from "@/Components/Header";
+import { AuthProvider } from "@/Context/AuthContext";
 
 function App() {
-
+  
   return (
     <>
-
-    <BrowserRouter>
-      
-      <Alan/>
+    <AuthProvider>
+     <BrowserRouter>
+       <Header />
+       <RoutesIndex/>
     </BrowserRouter>
+    </AuthProvider>
     </>
-  )
+  );
 }
 
 export default App;
