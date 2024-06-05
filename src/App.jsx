@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
-import RoutesIndex from "@/Routes/RoutesIndex";
-import Header from "@/Components/Header";
-import { AuthProvider } from "@/Context/AuthContext";
+import RoutesIndex from "@routes/RoutesIndex";
+import Header from "@components/Header";
+import { AuthProvider } from "@context/Authcontext";
 
 function App() {
   

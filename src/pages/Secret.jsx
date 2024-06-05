@@ -1,4 +1,4 @@
-import { useAuthContext } from "@/Hook/useAuthContext"
+import { useAuthContext } from "@hook/useAuthContext"
 const Secret = () => {
   const { userPayload } = useAuthContext()
   return (

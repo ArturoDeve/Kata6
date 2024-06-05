@@ -1,6 +1,6 @@
 // consumidor del contexto 
 import { useContext } from "react";
-import { AuthContext } from "@/Context/AuthContext";
+import { AuthContext } from "@context/Authcontext";
 
 export const useAuthContext = () => {
       // quiero usar mi contexto y esto lo guardo en context

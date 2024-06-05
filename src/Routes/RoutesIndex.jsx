@@ -1,7 +1,7 @@
 // Implementar react-router-dom
 import { Routes, Route } from 'react-router-dom'
-import { Home, Dashboard, Login, Secret, Signup } from '@/Pages'
-import { useAuthContext } from '@/Hook/useAuthContext'
+import { Home, Dashboard, Login, Secret, Signup } from '@pages/Index'
+import { useAuthContext } from '@hook/useAuthContext'
 
 const RoutesIndex = () => {
   const { isAuth } = useAuthContext()

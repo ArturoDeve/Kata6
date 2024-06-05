@@ -7,12 +7,16 @@ import path from 'path' // añado el path para poder saber la ruta
 
 export default defineConfig({
   plugins: [react()],
-
-  // configuro alias para mis carpetas con @
-
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src')
+      '@assets': path.resolve(__dirname, 'src/assets'),
+      '@components': path.resolve(__dirname, 'src/Components'),
+      '@context': path.resolve(__dirname, 'src/context'),
+      '@hook': path.resolve(__dirname, 'src/Hook'),
+      '@pages': path.resolve(__dirname, 'src/pages'),
+      '@routes': path.resolve(__dirname, 'src/Routes'),
+      '@services': path.resolve(__dirname, 'src/Services'),
+      '@styles': path.resolve(__dirname, 'src/styles')
     }
   }
 })

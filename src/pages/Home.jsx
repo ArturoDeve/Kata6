@@ -1,5 +1,6 @@
 import { useState,useEffect } from 'react'
-import { getAllItemsService } from '@/Services/itemServices'
+import { getAllItemsService } from '@services/itemServices'
+import gbon from '@assets/GBon.gif'
 
 const Home = () => {
     const [ itemList, setItemList ] = useState([]) // llenamos el estado de productos
@@ -21,6 +22,8 @@ const Home = () => {
   return (
     <> 
         <h1>Bienvenido al Home</h1>
+        <h1>que si wey!!!, diria el matosas</h1>
+        <img className='mb-4' src={gbon} alt='' width='500' height='500' />
         <div className='d-flex flex-row flex-wrap justify-content-center'>
     {/* Si itemsData no esta vacio, recorro el arreglo con Map, y creo una card de bootstrap para cada elemento (producto/item) */}
             { itemList && itemList.map((product) => (

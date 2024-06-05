@@ -1,17 +1,12 @@
 import { NavLink } from 'react-router-dom'
-import { useAuthContext } from '@Hook/useAuthContext'
+import { useAuthContext } from '@hook/useAuthContext'
 import './header.scss';
 
-const Header = () => {
-  const linkIsActive = (isActive) => isActive ? 'header__item-link header__item-link--is-active' : 'header__item-link'
-  const { logout, isAuth } = useAuthContext()
 
 
   const Header = () => {
-    const { logout, isAuth } = useAuthContext()
-  
     const linkIsActive = (isActive) => isActive ? 'header__item-link header__item-link--is-active' : 'header__item-link'
-  
+    const { logout, isAuth } = useAuthContext()
   
     return (
      // BEM PARA NUESTRAS CLASES EN HTML
@@ -53,4 +48,3 @@ const Header = () => {
   };
   
   export default Header;
-  
